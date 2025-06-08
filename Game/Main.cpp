@@ -1,16 +1,24 @@
 //
 // Created by Antoine Hanna on 6/7/2025.
 //
-#include <LittleEngine/Window/Window.h>
+#include <windows.h>
+#include "Game.h"
+#include "LittleEngine/Core/App/App.h"
+#include "LittleEngine/Core/Log/Log.h"
 
-using LittleEngine::Window::Window;
+using LittleEngine::Core::App;
+using LittleEngine::Core::Log;
+using LittleSurvivor::Game;
+
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
-    Window gameWindow = Window(hInstance, 800, 600, L"Game");
 
-    while (gameWindow.ProcessMessages()) {
-        //Game loop
-    }
+    App app;
+    Game game;
+
+    app.Init(&game);
+    app.Run(hInstance);
+    app.Shutdown();
 
     return 0;
 }
