@@ -14,9 +14,7 @@ file(GLOB_RECURSE LITTLE_SURVIVOR_SRC CONFIGURE_DEPENDS
         Game/Main.cpp
 )
 
-add_executable(LittleSurvivor ${LITTLE_SURVIVOR_SRC}
-        Game/include/aaa.cpp
-        Game/include/aaa.h)
+add_executable(LittleSurvivor ${LITTLE_SURVIVOR_SRC})
 
 # Set include path to find headers
 target_include_directories(LittleSurvivor PRIVATE
